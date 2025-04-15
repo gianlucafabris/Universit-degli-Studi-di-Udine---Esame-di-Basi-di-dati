@@ -1,0 +1,181 @@
+---
+title: "Basi di Dati - inserimenti dati nel Data Base"
+author: "Gianluca Fabris, Andrea Martin, Andrea Brollo, Alessio Stefan"
+date: "12/19/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("dplyr")
+library("RPostgreSQL")
+```
+
+```{r}
+drv <- dbDriver("PostgreSQL")
+
+con <- dbConnect(drv, dbname="Zoo", host="host", port=5432, user="user", password="password")
+
+```
+
+```{r}
+# insert Specie_Animale
+
+Specie_Animale = read.csv("data/insert Specie_Animale.csv")
+
+dbWriteTable(con, name=c("public", "specie_animale"), value=Specie_Animale, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Esemplare_Animale
+
+Esemplare_Animale = read.csv("data/insert Esemplare_Animale.csv")
+
+Esemplare_Animale$data_uscita[Esemplare_Animale$data_uscita == "null"] = NA
+
+dbWriteTable(con, name=c("public", "esemplare_animale"), value=Esemplare_Animale, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Area
+
+Area = read.csv("data/insert Area.csv")
+
+dbWriteTable(con, name=c("public", "area"), value=Area, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Casa
+
+Casa = read.csv("data/insert Casa.csv")
+
+dbWriteTable(con, name=c("public", "casa"), value=Casa, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Gabbia
+
+Gabbia = read.csv("data/insert Gabbia.csv")
+
+Gabbia$animale[Gabbia$animale == "null"] = NA
+Gabbia$specie[Gabbia$specie == "null"] = NA
+
+dbWriteTable(con, name=c("public", "gabbia"), value=Gabbia, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Persona
+
+Persona = read.csv("data/insert Persona.csv")
+
+Persona$codice_albo[Persona$codice_albo == "null"] = NA
+
+dbWriteTable(con, name=c("public", "persona"), value=Persona, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Intervento_Pulizia
+
+Intervento_Pulizia = read.csv("data/insert Intervento_Pulizia.csv")
+
+dbWriteTable(con, name=c("public", "intervento_pulizia"), value=Intervento_Pulizia, append=T, row.names=F)
+
+```
+
+```{r}
+# insert Visita_Veterinaria_Storico
+
+# Avviene inserendo in Visita veterinaria Corrente
+
+```
+
+```{r}
+# genera Visita_Veterianria_Corrente
+
+animali <- dbGetQuery(con, "SELECT * FROM Esemplare_Animale")
+veterinari <- dbGetQuery(con, "SELECT * FROM Persona WHERE veterinario='y'")
+v_malattie<-readLines("data/malattie.txt")
+v_diete<-readLines("data/diete.txt")
+
+date = c()
+codici_animale = c()
+specie_animale = c()
+malattie_animale = c()
+pesi_animale = c()
+diete_animale = c()
+veterinari_animale = c()
+
+for(indice_animale in 1:nrow(animali)){
+  codice_animale = animali$codice[indice_animale]
+  specie_animale_singolo = animali$specie[indice_animale]
+  data_entrata = format(animali$data_entrata[indice_animale], "%Y-%m-%d")
+  if (is.na(animali$data_uscita[indice_animale])){
+    data_uscita = format(Sys.Date(), "%Y-%m-%d")
+  }else{
+    data_uscita = format(animali$data_uscita[indice_animale], "%Y-%m-%d")
+  }
+
+  data_vvc = data_entrata
+  peso = sample(10:999990, 1, replace=T)
+  
+  date = c(date, data_vvc)
+  codici_animale = c(codici_animale, codice_animale)
+  specie_animale = c(specie_animale, specie_animale_singolo)
+  if(sample(1:100, 1)<10){
+    malattie_animale <- c(malattie_animale, sample(v_malattie, 1, replace=T))
+    diete_animale <- c(diete_animale, sample(v_diete, 1, replace=T))
+  }else{
+    malattie_animale <- c(malattie_animale, "")
+    diete_animale <- c(diete_animale, "")
+  }
+  pesi_animale <- c(pesi_animale, peso)
+  veterinari_animale <- c(veterinari_animale, sample(veterinari$codice_fiscale, 1, replace=T))
+  
+  while(as.Date(data_uscita) > as.Date(data_vvc) + 30){
+    if(sample(1:100, 1)<10){
+      data_vvc = format(as.Date(data_vvc) + sample(1:29, 1), "%Y-%m-%d")
+      
+      malattie_animale <- c(malattie_animale, sample(v_malattie, 1, replace=T))
+      diete_animale <- c(diete_animale, sample(v_diete, 1, replace=T))
+    }else{
+      data_vvc = format(as.Date(data_vvc) + 30, "%Y-%m-%d")
+      
+      if(sample(1:100, 1)<10){
+        malattie_animale <- c(malattie_animale, sample(v_malattie, 1, replace=T))
+        diete_animale <- c(diete_animale, sample(v_diete, 1, replace=T))
+      }else{
+        malattie_animale <- c(malattie_animale, "")
+        diete_animale <- c(diete_animale, "")
+      }
+    }
+    
+    date = c(date, data_vvc)
+    codici_animale = c(codici_animale, codice_animale)
+    specie_animale = c(specie_animale, specie_animale_singolo)
+    pesi_animale <- c(pesi_animale, peso + sample(-9:9, 1, replace=T))
+    veterinari_animale <- c(veterinari_animale, sample(veterinari$codice_fiscale, 1, replace=T))
+  }
+}
+
+dati <- data.frame(data = date, animale=codici_animale, specie=specie_animale, malattia = malattie_animale, peso = pesi_animale, dieta = diete_animale, veterinario = veterinari_animale)
+
+write.csv(dati, "data/insert Visita_Veterinaria_Corrente.csv", row.names=FALSE)
+
+```
+
+```{r}
+# insert Visita_Veterinaria_Corrente
+
+Visita_Veterinaria_Corrente = read.csv("data/insert Visita_Veterinaria_Corrente.csv")
+
+Visita_Veterinaria_Corrente$malattia[Visita_Veterinaria_Corrente$malattia == "null"] = NA
+Visita_Veterinaria_Corrente$dieta[Visita_Veterinaria_Corrente$dieta == "null"] = NA
+
+dbWriteTable(con, name=c("public", "visita_veterinaria_corrente"), value=Visita_Veterinaria_Corrente, append=T, row.names=F)
+
+```

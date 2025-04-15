@@ -1,0 +1,200 @@
+lettera,casa,area,animale,specie
+a,1,Purple,2,African buffalo
+b,1,Purple,3,African buffalo
+c,1,Purple,10,African buffalo
+d,1,Purple,12,African buffalo
+e,1,Purple,13,African buffalo
+f,1,Purple,15,African buffalo
+a,2,Purple,1,African lynx
+b,2,Purple,3,African lynx
+c,2,Purple,6,African lynx
+d,2,Purple,11,African lynx
+e,2,Purple,18,African lynx
+a,3,Purple,7,American alligator
+b,3,Purple,8,American alligator
+c,3,Purple,14,American alligator
+d,3,Purple,15,American alligator
+e,3,Purple,19,American alligator
+a,4,Purple,2,Arboral spiny rat
+b,4,Purple,8,Arboral spiny rat
+c,4,Purple,11,Arboral spiny rat
+d,4,Purple,16,Arboral spiny rat
+e,4,Purple,18,Arboral spiny rat
+a,5,Purple,2,Australian magpie
+b,5,Purple,3,Australian magpie
+c,5,Purple,17,Australian magpie
+d,5,Purple,19,Australian magpie
+a,6,Purple,3,Badger american
+b,6,Purple,11,Badger american
+c,6,Purple,19,Badger american
+d,6,Purple,20,Badger american
+a,7,Purple,9,Bird pied butcher
+b,7,Purple,10,Bird pied butcher
+c,7,Purple,14,Bird pied butcher
+d,7,Purple,15,Bird pied butcher
+e,7,Purple,18,Bird pied butcher
+a,1,Yellow,9,Brazilian tapir
+b,1,Yellow,13,Brazilian tapir
+c,1,Yellow,19,Brazilian tapir
+d,1,Yellow,null,null
+e,1,Yellow,null,null
+a,2,Yellow,2,Buttermilk snake
+b,2,Yellow,14,Buttermilk snake
+c,2,Yellow,19,Buttermilk snake
+d,2,Yellow,null,null
+e,2,Yellow,null,null
+a,3,Yellow,2,Constrictor eastern boa
+b,3,Yellow,5,Constrictor eastern boa
+c,3,Yellow,14,Constrictor eastern boa
+d,3,Yellow,17,Constrictor eastern boa
+e,3,Yellow,null,null
+a,4,Yellow,5,Dragon ornate rock
+b,4,Yellow,16,Dragon ornate rock
+c,4,Yellow,17,Dragon ornate rock
+d,4,Yellow,null,null
+e,4,Yellow,null,null
+a,5,Yellow,null,null
+b,5,Yellow,null,null
+c,5,Yellow,null,null
+d,5,Yellow,null,null
+e,5,Yellow,null,null
+a,6,Yellow,5,Flicker campo
+b,6,Yellow,9,Flicker campo
+c,6,Yellow,10,Flicker campo
+d,6,Yellow,null,null
+e,6,Yellow,null,null
+a,7,Yellow,9,Glider feathertail
+b,7,Yellow,10,Glider feathertail
+c,7,Yellow,13,Glider feathertail
+d,7,Yellow,14,Glider feathertail
+e,7,Yellow,null,null
+a,1,Blue,5,Goldeneye common
+b,1,Blue,7,Goldeneye common
+c,1,Blue,10,Goldeneye common
+d,1,Blue,19,Goldeneye common
+e,1,Blue,20,Goldeneye common
+a,2,Blue,1,Goose greylag
+b,2,Blue,4,Goose greylag
+c,2,Blue,6,Goose greylag
+d,2,Blue,18,Goose greylag
+e,2,Blue,19,Goose greylag
+a,3,Blue,2,Great egret
+b,3,Blue,3,Great egret
+c,3,Blue,4,Great egret
+d,3,Blue,null,null
+e,3,Blue,null,null
+a,4,Blue,6,Greater sage grouse
+b,4,Blue,11,Greater sage grouse
+c,4,Blue,18,Greater sage grouse
+d,4,Blue,null,null
+e,4,Blue,null,null
+a,5,Blue,7,Kangaroo western grey
+b,5,Blue,9,Kangaroo western grey
+c,5,Blue,13,Kangaroo western grey
+d,5,Blue,15,Kangaroo western grey
+e,5,Blue,null,null
+a,6,Blue,2,Kelp gull
+b,6,Blue,4,Kelp gull
+c,6,Blue,6,Kelp gull
+d,6,Blue,13,Kelp gull
+e,6,Blue,null,null
+a,1,Green,11,King cormorant
+b,1,Green,12,King cormorant
+c,1,Green,13,King cormorant
+d,1,Green,15,King cormorant
+e,1,Green,20,King cormorant
+a,2,Green,11,Mockingbird galapagos
+b,2,Green,13,Mockingbird galapagos
+c,2,Green,14,Mockingbird galapagos
+d,2,Green,19,Mockingbird galapagos
+e,2,Green,null,null
+a,3,Green,8,Mynah indian
+b,3,Green,19,Mynah indian
+c,3,Green,null,null
+d,3,Green,null,null
+e,3,Green,null,null
+a,4,Green,3,Onager
+b,4,Green,5,Onager
+c,4,Green,7,Onager
+d,4,Green,8,Onager
+e,4,Green,null,null
+a,5,Green,6,Pale white-eye
+b,5,Green,13,Pale white-eye
+c,5,Green,14,Pale white-eye
+d,5,Green,18,Pale white-eye
+e,5,Green,null,null
+a,6,Green,1,Pine siskin
+b,6,Green,5,Pine siskin
+c,6,Green,17,Pine siskin
+d,6,Green,null,null
+e,6,Green,null,null
+a,7,Green,5,Pygmy possum
+b,7,Green,12,Pygmy possum
+c,7,Green,14,Pygmy possum
+d,7,Green,15,Pygmy possum
+e,7,Green,null,null
+a,1,Red,1,Python carpet
+b,1,Red,3,Python carpet
+c,1,Red,6,Python carpet
+d,1,Red,8,Python carpet
+e,1,Red,null,null
+a,2,Red,4,Racer snake
+b,2,Red,5,Racer snake
+c,2,Red,10,Racer snake
+d,2,Red,11,Racer snake
+e,2,Red,15,Racer snake
+f,2,Red,19,Racer snake
+a,3,Red,null,null
+b,3,Red,12,Radiated tortoise
+c,3,Red,13,Radiated tortoise
+d,3,Red,16,Radiated tortoise
+e,3,Red,17,Radiated tortoise
+a,4,Red,3,Rattlesnake eastern diamondback
+b,4,Red,6,Rattlesnake eastern diamondback
+c,4,Red,14,Rattlesnake eastern diamondback
+d,4,Red,18,Rattlesnake eastern diamondback
+e,4,Red,19,Rattlesnake eastern diamondback
+a,5,Red,1,Roadrunner greater
+b,5,Red,6,Roadrunner greater
+c,5,Red,14,Roadrunner greater
+d,5,Red,19,Roadrunner greater
+a,6,Red,2,Screamer southern
+b,6,Red,7,Screamer southern
+c,6,Red,8,Screamer southern
+d,6,Red,12,Screamer southern
+e,6,Red,15,Screamer southern
+f,6,Red,16,Screamer southern
+a,7,Red,5,Snake unidentified
+b,7,Red,14,Snake unidentified
+c,7,Red,15,Snake unidentified
+d,7,Red,16,Snake unidentified
+a,1,Orange,9,Snowy owl
+b,1,Orange,16,Snowy owl
+c,1,Orange,null,null
+d,1,Orange,null,null
+e,1,Orange,null,null
+a,2,Orange,8,Southern black-backed gull
+b,2,Orange,9,Southern black-backed gull
+c,2,Orange,null,null
+d,2,Orange,null,null
+e,2,Orange,null,null
+a,3,Orange,9,Tenrec tailless
+b,3,Orange,13,Tenrec tailless
+c,3,Orange,16,Tenrec tailless
+d,3,Orange,null,null
+e,3,Orange,null,null
+a,4,Orange,4,Wapiti elk
+b,4,Orange,9,Wapiti elk
+c,4,Orange,12,Wapiti elk
+d,4,Orange,19,Wapiti elk
+e,4,Orange,null,null
+a,5,Orange,2,Western bearded dragon
+b,5,Orange,17,Western bearded dragon
+c,5,Orange,null,null
+d,5,Orange,null,null
+a,6,Orange,5,White-fronted capuchin
+b,6,Orange,7,White-fronted capuchin
+c,6,Orange,10,White-fronted capuchin
+d,6,Orange,14,White-fronted capuchin
+e,6,Orange,16,White-fronted capuchin
+f,6,Orange,19,White-fronted capuchin
